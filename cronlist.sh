@@ -1,6 +1,7 @@
 #!/bin/bash
+#this script lists all of the cronjobs on a machine
 cd /var/spool/cron
-ls -1 > /root/cronusers.txt
+ls -l > /root/cronusers.txt
 for i in `cat /root/cronusers.txt`
  do
   echo "######For the user $i######" >> /root/cronlist.txt
