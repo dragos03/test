@@ -1,4 +1,4 @@
-ttached is a sample Apache log-file. Using standard command-line tools, parse the file to produce the following:
+Attached is a sample Apache log-file. Using standard command-line tools, parse the file to produce the following:
 
 - The top 10 IPs making the most requests, displaying the IP address and number of requests made
 cut -f 1 -d - access_log | sort | uniq -c | sort -nr | head -10  
