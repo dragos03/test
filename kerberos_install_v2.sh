@@ -1,5 +1,7 @@
 #!/bin/bash
 
+#this script install Kerberos on either CentOS or Ubuntu
+
 #set up file locations
 RED=/etc/redhat-release
 UBU=/etc/issue
