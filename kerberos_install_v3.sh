@@ -38,7 +38,19 @@ fi
 
 #enter domain name and password
 read -p "Please enter your domain: " DOMAIN
-read -sp "Please enter the desired password: " PASS
+
+PASS="a"
+PASS2="b"
+
+until [ $PASS == $PASS2 ]; do
+  read -sp "Please enter your password: " PASS
+  echo
+  read -sp "Please confirm your password: " PASS2
+  if [ $PASS != $PASS2 ]; then
+    printf "\nPasswords don't match, try again\n"
+  fi
+done
+
 DOMAINU=`echo $DOMAIN | tr [a-z] [A-Z]`
 
 # edit configuration files
