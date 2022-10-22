@@ -7,8 +7,12 @@ read -p "Please enter the cPanel username: " user
 group=$user
 
 #test if the cPanel user exists
-
-#if not, prompt again
+if id "$user" &>/dev/null; then
+	echo "$user is a valid cPanel user"
+else 
+	read -p "$user does not exist, please enter a valid cPanel username: " user
+	group=$user
+fi
 
 #fixing ownership
 chown -R $user:$group /home/$user/public_html
